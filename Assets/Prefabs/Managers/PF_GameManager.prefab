@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 3577897263665330779, guid: 4a92c4895b7ba06459d1b43864397307, type: 3}
-  playerLives: 3
+  playerLives: 1
   playerScore: 0
