@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6390127374494985907}
   - component: {fileID: 3298796119628643962}
   - component: {fileID: 3577897263665330775}
+  - component: {fileID: 8647381158768898114}
   m_Layer: 0
   m_Name: PF_Char_Player
   m_TagString: Untagged
@@ -33,6 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7436382833167393147}
+  - {fileID: 6009996050042783323}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48,7 +50,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a71fe73184d8bc4dbff6fd0290d1c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMovementBehaviour: {fileID: 3298796119628643962}
+  playerMovement: {fileID: 3298796119628643962}
+  playerCombat: {fileID: 8647381158768898114}
   playerInput: {fileID: 6390127374494985907}
 --- !u!114 &6390127374494985907
 MonoBehaviour:
@@ -95,6 +98,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: ab7b9a5f-34a7-49b5-b682-4ea78886e1f4
     m_ActionName: Menu Controls/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5537293072008634959}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnShoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a2554095-7051-4eb3-a7dd-f6b66ba70e2c
+    m_ActionName: Player Controls/Shoot[/XInputControllerWindows/buttonSouth,/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player Controls
@@ -113,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 3577897263665330775}
-  movementSpeed: 100
+  movementSpeed: 200
 --- !u!50 &3577897263665330775
 Rigidbody2D:
   serializedVersion: 4
@@ -135,6 +154,65 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8647381158768898114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3577897263665330779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf347d9fd96bdd488711e177ecd939d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun: {fileID: 3487382745730383175}
+--- !u!1 &4890244415334519590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6009996050042783323}
+  - component: {fileID: 3487382745730383175}
+  m_Layer: 0
+  m_Name: Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6009996050042783323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4890244415334519590}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3577897263665330772}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3487382745730383175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4890244415334519590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f56c978bcfe209428c1824212140c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 7360986464624826746, guid: 0b0ceb9e49d68504da6f20daece760a7, type: 3}
+  fireRate: 0.1
 --- !u!1 &8842183699090437802
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +287,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementBehaviour : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [Header("Component References")]
     public Rigidbody2D playerRigidbody;
