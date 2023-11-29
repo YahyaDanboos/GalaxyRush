@@ -51,8 +51,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyRigidbody: {fileID: 2659612169787705608}
   movementSpeed: 5
-  isSinMovement: 1
+  isSinMovement: 0
   waveAmplitude: 1
+  waveFrequence: 1
 --- !u!114 &7700481089369767566
 MonoBehaviour:
   m_ObjectHideFlags: 0

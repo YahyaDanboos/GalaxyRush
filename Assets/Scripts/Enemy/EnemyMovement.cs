@@ -10,7 +10,8 @@ public class EnemyMovement : MonoBehaviour
     [Header("Movement Settings")]
     public float movementSpeed = 5f;
     public bool isSinMovement = false;
-    public float waveAmplitude = 0.5f;
+    public float waveAmplitude = 1f;
+    public float waveFrequence = 1f;
 
     //Stored Values
     float sinCenterX;
@@ -34,7 +35,7 @@ public class EnemyMovement : MonoBehaviour
 
         if (isSinMovement)
         {
-            float sinOffset = Mathf.Sin(newPosition.y) * waveAmplitude;
+            float sinOffset = Mathf.Sin(newPosition.y * waveFrequence) * waveAmplitude;
             newPosition.x = sinCenterX + sinOffset;
         }
 
