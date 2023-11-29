@@ -12,11 +12,13 @@ GameObject:
   - component: {fileID: 5537293072008634959}
   - component: {fileID: 6390127374494985907}
   - component: {fileID: 3298796119628643962}
-  - component: {fileID: 3577897263665330775}
   - component: {fileID: 8647381158768898114}
+  - component: {fileID: 161097208841951083}
+  - component: {fileID: 3577897263665330775}
+  - component: {fileID: 2500758878169871557}
   m_Layer: 0
-  m_Name: PF_Char_Player
-  m_TagString: Untagged
+  m_Name: PF_Player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,7 +134,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 3577897263665330775}
-  movementSpeed: 200
+  movementSpeed: 10
+--- !u!114 &8647381158768898114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3577897263665330779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf347d9fd96bdd488711e177ecd939d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun: {fileID: 3487382745730383175}
+--- !u!114 &161097208841951083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3577897263665330779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5783802c1333744971953bd0d91c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!50 &3577897263665330775
 Rigidbody2D:
   serializedVersion: 4
@@ -153,20 +181,23 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &8647381158768898114
-MonoBehaviour:
+  m_Constraints: 4
+--- !u!58 &2500758878169871557
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3577897263665330779}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abf347d9fd96bdd488711e177ecd939d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gun: {fileID: 3487382745730383175}
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &4890244415334519590
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +223,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4890244415334519590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.757, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

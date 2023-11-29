@@ -38,7 +38,8 @@ public class Gun : MonoBehaviour
     //Shooting a bullet
     void Shoot()
     {
-        Instantiate(bulletPrefab, transform.position, transform.rotation);
+        Bullet bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+        bullet.SetBulletTarget(true);
     }
 
     //Used to set the shooting state

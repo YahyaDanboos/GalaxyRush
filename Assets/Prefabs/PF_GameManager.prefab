@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3557952095399062030}
   - component: {fileID: 5172446252976581522}
   m_Layer: 0
-  m_Name: PF_Sys_GameManager
+  m_Name: PF_GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,3 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 3577897263665330779, guid: 4a92c4895b7ba06459d1b43864397307, type: 3}
+  playerLives: 3
+  playerScore: 0
