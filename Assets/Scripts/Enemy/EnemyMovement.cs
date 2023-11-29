@@ -12,6 +12,7 @@ public class EnemyMovement : MonoBehaviour
     public bool isSinMovement = false;
     public float waveAmplitude = 1f;
     public float waveFrequence = 1f;
+    public bool isSinInverted = false;
 
     //Stored Values
     float sinCenterX;
@@ -36,6 +37,10 @@ public class EnemyMovement : MonoBehaviour
         if (isSinMovement)
         {
             float sinOffset = Mathf.Sin(newPosition.y * waveFrequence) * waveAmplitude;
+
+            if (isSinInverted)
+                sinOffset *= -1;
+
             newPosition.x = sinCenterX + sinOffset;
         }
 
