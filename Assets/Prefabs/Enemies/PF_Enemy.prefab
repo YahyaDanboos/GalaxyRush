@@ -80,6 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5783802c1333744971953bd0d91c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyedVFX: {fileID: 934087983593979823, guid: d315b9f7c102323448a0189d03d2992f, type: 3}
   maxHealth: 100
 --- !u!50 &2659612169787705608
 Rigidbody2D:

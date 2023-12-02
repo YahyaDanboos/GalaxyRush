@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomStartAnimator : MonoBehaviour
+public class DestroyAfterAnimation : MonoBehaviour
 {
     private Animator animator;
     private AnimatorStateInfo stateInfo;
@@ -12,7 +12,12 @@ public class RandomStartAnimator : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-        float randomStartTime = Random.Range(0, stateInfo.length);
-        animator.Play(stateInfo.fullPathHash, -1, randomStartTime);
+        StartCoroutine(WaitAndDestroy(stateInfo.length));
+    }
+
+    IEnumerator WaitAndDestroy(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
     }
 }

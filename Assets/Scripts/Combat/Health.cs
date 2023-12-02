@@ -5,6 +5,9 @@ using System;
 
 public class Health : MonoBehaviour
 {
+    [Header("Prefab References")]
+    public GameObject destroyedVFX;
+
     [Header("Health Settings")]
     public int maxHealth = 100;
     private int currentHealth;
@@ -29,6 +32,7 @@ public class Health : MonoBehaviour
     void Defeated()
     {
         characterDefeated?.Invoke();
+        Instantiate(destroyedVFX, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }
