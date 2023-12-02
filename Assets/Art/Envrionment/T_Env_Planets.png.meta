@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2a6816979c4da9143a8bf0c276a7737c
+guid: 0171c514fe427f34bb061077d65481cc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,118 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: T_Env_Stars_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 14
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 16270cc0833c66b47a3509654f961318
-      internalID: 885920266
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: T_Env_Stars_1
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 14
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6fb5a992d3f3324ca82f30657759c5e
-      internalID: -818485177
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: T_Env_Stars_2
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 14
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 28115673800563c419d0b6690d55d04c
-      internalID: -99197969
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: T_Env_Stars_3
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 14
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 15c0a34fdb6f0cd4e9a86d6bbb0ab051
-      internalID: 2046330525
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: T_Env_Stars_4
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 14
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3d1a2ac4cb7103d4783aaf3692c2f7a8
-      internalID: -534197951
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: T_Env_Stars_5
+      name: T_Env_Planets_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 14
-        height: 14
+        width: 129
+        height: 129
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e75e9a122c22bdc41be8eb4e97e0d74b
-      internalID: -1665731752
+      spriteID: e34b659846e332a40a14e124a166be04
+      internalID: 572894888
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Env_Stars_6
+      name: T_Env_Planets_1
       rect:
         serializedVersion: 2
-        x: 14
+        x: 129
         y: 0
-        width: 14
-        height: 14
+        width: 129
+        height: 129
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b147dd80af749345812720f10ea01e6
-      internalID: 1086370552
+      spriteID: 9be8a52d248e8da408917c5339536813
+      internalID: 1182063660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Env_Stars_7
+      name: T_Env_Planets_2
       rect:
         serializedVersion: 2
-        x: 28
-        y: 0
-        width: 14
-        height: 14
+        x: 258
+        y: 47
+        width: 53
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2d295b59866dfe4894397a15aaee5f9
-      internalID: -362431440
+      spriteID: 97e8fdf493d5073478992caeb5cac083
+      internalID: 363980212
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Env_Stars_8
+      name: T_Env_Planets_3
       rect:
         serializedVersion: 2
-        x: 42
-        y: 0
-        width: 14
-        height: 14
+        x: 258
+        y: 100
+        width: 73
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f283ee133d5aca49bcaa1befdf91edf
-      internalID: -2086412260
+      spriteID: 426226a34ee07b9469e7684704f8e60c
+      internalID: -1073073938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Env_Stars_9
+      name: T_Env_Planets_4
       rect:
         serializedVersion: 2
-        x: 56
-        y: 0
-        width: 14
-        height: 14
+        x: 331
+        y: 93
+        width: 64
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,8 +215,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c61364edd3b7a045888f85420ea7e30
-      internalID: 1284798438
+      spriteID: 182f21001f12d1a4c941bedb56b8814e
+      internalID: -901481867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Env_Planets_5
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 77
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d63ad7c414530349bc9349f7c41a874
+      internalID: 1772886049
       vertices: []
       indices: 
       edges: []
@@ -337,16 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      T_Env_Stars_0: 885920266
-      T_Env_Stars_1: -818485177
-      T_Env_Stars_2: -99197969
-      T_Env_Stars_3: 2046330525
-      T_Env_Stars_4: -534197951
-      T_Env_Stars_5: -1665731752
-      T_Env_Stars_6: 1086370552
-      T_Env_Stars_7: -362431440
-      T_Env_Stars_8: -2086412260
-      T_Env_Stars_9: 1284798438
+      T_Env_Planets_0: 572894888
+      T_Env_Planets_1: 1182063660
+      T_Env_Planets_2: 363980212
+      T_Env_Planets_3: -1073073938
+      T_Env_Planets_4: -901481867
+      T_Env_Planets_5: 1772886049
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
