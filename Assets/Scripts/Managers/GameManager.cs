@@ -10,12 +10,14 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
 
     [Header("Player Stats")]
-    public int playerLives = 3;
+    int playerLives = 3;
     public int playerScore;
 
     Health playerHealthReference;
 
     public static event Action gameOver;
+    public static event Action removePlayerLife;
+    public static event Action addPlayerLife;
 
     // Start is called before the first frame update
     void Start()
@@ -36,20 +38,32 @@ public class GameManager : MonoBehaviour
 
         // Subscribe to the player instance's defeat event
         playerHealthReference.characterDefeated += PlayerDefeated;
+        playerHealthReference.addLife += AddPlayerLife;
     }
 
     // Called by the player when it's defeated
-    public void PlayerDefeated()
+    void PlayerDefeated()
     {
         // Unsubscribe to the player instance's defeat event
         playerHealthReference.characterDefeated -= PlayerDefeated;
+        playerHealthReference.addLife -= AddPlayerLife;
 
         playerLives--;
+        removePlayerLife?.Invoke();
 
         if (playerLives <= 0)
             GameOver();
         else
             Respawn();
+    }
+
+    void AddPlayerLife()
+    {
+        if (playerLives < 3)
+        {
+            playerLives++;
+            addPlayerLife?.Invoke();
+        }
     }
 
     // Starts the player respawning phase

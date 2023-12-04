@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     private int currentHealth;
 
     public event Action characterDefeated;
+    public event Action addLife;
 
     void Start()
     {
@@ -34,5 +35,10 @@ public class Health : MonoBehaviour
         characterDefeated?.Invoke();
         Instantiate(destroyedVFX, transform.position, transform.rotation);
         Destroy(gameObject);
+    }
+
+    public void AddLife()
+    {
+        addLife?.Invoke();
     }
 }
