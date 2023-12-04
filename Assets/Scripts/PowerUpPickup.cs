@@ -7,6 +7,10 @@ public class PowerUpPickup : MonoBehaviour
     [Header("Component References")]
     public Rigidbody2D powerUpRigidbody;
 
+    [Header("Prefab References")]
+    public AudioClip pickUpSFX;
+    public PlaySoundAndDestroy oneShotSFXPlayer;
+
     float speed = 2;
 
     public enum PowerUpTypes
@@ -38,6 +42,10 @@ public class PowerUpPickup : MonoBehaviour
                 case PowerUpTypes.Shield:
                     break;
             }
+
+            // Play sound effect
+            PlaySoundAndDestroy sfxPlayer = Instantiate(oneShotSFXPlayer);
+            sfxPlayer.PlaySFX(pickUpSFX);
 
             Destroy(gameObject);                
         }

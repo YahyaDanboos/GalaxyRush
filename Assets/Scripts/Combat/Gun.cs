@@ -7,6 +7,9 @@ public class Gun : MonoBehaviour
     [Header("Prefab References")]
     public Bullet bulletPrefab;
 
+    [Header("Component References")]
+    public AudioSource sfxPlayer;
+
     [Header("Gun Settings")]
     public float fireRate = 0.5f;
 
@@ -40,6 +43,9 @@ public class Gun : MonoBehaviour
     {
         Bullet bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
         bullet.SetBulletTarget(true);
+
+        // Play sound effect
+        sfxPlayer.Play();
     }
 
     //Used to set the shooting state

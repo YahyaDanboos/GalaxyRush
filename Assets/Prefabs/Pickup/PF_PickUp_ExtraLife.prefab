@@ -49,6 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpRigidbody: {fileID: 4800286904625854146}
+  pickUpSFX: {fileID: 8300000, guid: 96b7d7a48f47ac1439fba251a9050f53, type: 3}
+  oneShotSFXPlayer: {fileID: 1715810956802225712, guid: 6b3d35b994522cb4da1ffbefdc3de99f, type: 3}
   powerUp: 0
 --- !u!212 &3064408278020752287
 SpriteRenderer:
