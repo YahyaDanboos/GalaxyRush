@@ -11,11 +11,15 @@ public class GameManager : MonoBehaviour
 
     [Header("Player Stats")]
     int playerLives = 3;
-    public int playerScore;
+    int gameScore;
 
+    // Player's health component reference
     Health playerHealthReference;
 
+    // Game Over Event
     public static event Action gameOver;
+
+    // Player Lives change Events
     public static event Action removePlayerLife;
     public static event Action addPlayerLife;
 

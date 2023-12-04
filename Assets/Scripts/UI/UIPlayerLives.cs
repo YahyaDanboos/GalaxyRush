@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class UIPlayerLives : MonoBehaviour
 {
+    [Header("Component References")]
     public GameObject[] playerLiveSprites;
 
     int playerLives = 3;
