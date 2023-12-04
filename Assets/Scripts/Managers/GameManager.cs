@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
             Respawn();
     }
 
+    // Add a life to the player if there are less than 3 lives
     void AddPlayerLife()
     {
         if (playerLives < 3)

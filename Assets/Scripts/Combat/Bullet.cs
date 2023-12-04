@@ -8,14 +8,13 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D bulletRigidbody;
 
     [Header("Movement Settings")]
-    public Vector2 direction = new Vector2(0,1);
     public float speed = 2f;
 
     [Header("Combat Settings")]
     public int attackPower = 10;
 
     // Lifetime of the bullet in seconds
-    private float lifetime = 5f;
+    float lifetime = 5f;
 
     // The tag of the target that the bullet is trying to hit
     string targetTag;
@@ -30,15 +29,19 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        // Calculate the direction based on the bullet's rotation
+        Vector2 direction = transform.up;
         bulletRigidbody.velocity = direction.normalized * speed;
     }
 
-    public void SetBulletTarget(bool isPlayer)
+    public void SetBulletTarget(bool isPlayer, int newAttackPower)
     {
         if (isPlayer)
             targetTag = "Enemy";
         else
             targetTag = "Player";
+
+        attackPower = newAttackPower;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,6 +49,8 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag(targetTag))
         {
             collision.gameObject.GetComponent<Health>().TakeDamage(attackPower);
+
+            Destroy(gameObject);
         }
     }
 }

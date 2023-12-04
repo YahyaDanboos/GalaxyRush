@@ -6,6 +6,9 @@ public class GunData : ScriptableObject
     [Tooltip("Prefab of the bullet that this gun fires.")]
     public Bullet bulletPrefab;
 
+    [Tooltip("The attack power for the gun.")]
+    public int attackPower;
+
     [Tooltip("The rate of fire for the gun.")]
     public float fireRate;
 

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SO_Gun_DoubleShot
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 65484545252155000, guid: b2fd2e7e80addd64db53c92b6b127ffd, type: 3}
+  attackPower: 10
   fireRate: 0.15
   bulletsPerShot: 2
   fireSound: {fileID: 8300000, guid: a4c6341454563e64b9770927f5912097, type: 3}

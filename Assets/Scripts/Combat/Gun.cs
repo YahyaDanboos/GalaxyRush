@@ -57,7 +57,7 @@ public class Gun : MonoBehaviour
     void SpawnBullet(GameObject spawnPoint)
     {
         Bullet bullet = Instantiate(gunData.bulletPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
-        bullet.SetBulletTarget(true);
+        bullet.SetBulletTarget(true, gunData.attackPower);
     }
 
     //Used to set the shooting state

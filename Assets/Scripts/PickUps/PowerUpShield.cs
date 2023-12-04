@@ -18,5 +18,9 @@ public class PowerUpShield : MonoBehaviour
         {
             collision.gameObject.GetComponent<Health>().TakeDamage(1000);
         }
+        else if (collision.gameObject.CompareTag("Enemy/Bullet"))
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }

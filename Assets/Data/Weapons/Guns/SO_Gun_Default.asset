@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SO_Gun_Default
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 65484545252155000, guid: bb04b809576033d4db4b84a69c79ca44, type: 3}
+  attackPower: 10
   fireRate: 0.15
   bulletsPerShot: 1
   fireSound: {fileID: 8300000, guid: a4c6341454563e64b9770927f5912097, type: 3}
