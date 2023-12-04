@@ -97,10 +97,6 @@ MonoBehaviour:
     m_ActionId: 1c66ba0c-8b86-43d7-9276-ef512979c6d1
     m_ActionName: Player Controls/Movement[/XInputControllerWindows/leftStick,/XInputControllerWindows/dpad,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ab7b9a5f-34a7-49b5-b682-4ea78886e1f4
-    m_ActionName: Menu Controls/New action
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5537293072008634959}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
@@ -116,6 +112,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a2554095-7051-4eb3-a7dd-f6b66ba70e2c
     m_ActionName: Player Controls/Shoot[/XInputControllerWindows/buttonSouth,/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5537293072008634959}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 51e96e85-7b42-4724-b5da-2a0496168c2c
+    m_ActionName: Player Controls/Pause[/Keyboard/escape,/XInputControllerWindows/start]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player Controls

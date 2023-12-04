@@ -68,8 +68,6 @@ public class GameManager : MonoBehaviour
     // Called when the game is over
     void GameOver()
     {
-        print("Game Over");
-
         gameOver?.Invoke();
     }
 }

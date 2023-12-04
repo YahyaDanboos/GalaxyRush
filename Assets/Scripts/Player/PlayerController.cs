@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class PlayerController : MonoBehaviour
     [Header("Input Settings")]
     public PlayerInput playerInput;
     private Vector2 inputMovement;
+
+    public static event Action pauseGame;
 
     //Action Maps
     //private string actionMapPlayerControls = "Player Controls"; 
@@ -38,6 +41,11 @@ public class PlayerController : MonoBehaviour
             playerCombat.Shoot(true);
         else if (value.canceled)
             playerCombat.Shoot(false);
+    }
+
+    public void OnPause(InputAction.CallbackContext value)
+    {
+        pauseGame?.Invoke();
     }
 
     // Update is called once per frame
