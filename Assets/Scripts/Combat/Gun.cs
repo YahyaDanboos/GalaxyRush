@@ -4,23 +4,19 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    [Header("Prefab References")]
-    public Bullet bulletPrefab;
+    [Header("Data References")]
+    public GunData gunData;
 
     [Header("Component References")]
     public AudioSource sfxPlayer;
 
-    [Header("Gun Settings")]
-    public float fireRate = 0.5f;
+    // Gun Bullet Spawn Game Objects
+    public GameObject oneShotSpawn;
+    public GameObject doubleShotSpawnLeft;
+    public GameObject doubleShotSpawnRight;
 
     bool isShoot;
     float nextFireTime;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -33,7 +29,7 @@ public class Gun : MonoBehaviour
     {
         if (isShoot && Time.time >= nextFireTime)
         {
-            nextFireTime = Time.time + fireRate;
+            nextFireTime = Time.time + gunData.fireRate;
             Shoot();
         }
     }
@@ -41,11 +37,27 @@ public class Gun : MonoBehaviour
     //Shooting a bullet
     void Shoot()
     {
-        Bullet bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-        bullet.SetBulletTarget(true);
+        switch (gunData.bulletsPerShot)
+        {
+            case 1:
+                SpawnBullet(oneShotSpawn);
+                break;
+            case 2:
+                SpawnBullet(doubleShotSpawnLeft);
+                SpawnBullet(doubleShotSpawnRight);
+                break;
+            default:
+                break;
+        }
 
         // Play sound effect
         sfxPlayer.Play();
+    }
+
+    void SpawnBullet(GameObject spawnPoint)
+    {
+        Bullet bullet = Instantiate(gunData.bulletPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
+        bullet.SetBulletTarget(true);
     }
 
     //Used to set the shooting state

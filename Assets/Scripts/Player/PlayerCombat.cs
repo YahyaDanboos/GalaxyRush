@@ -12,4 +12,9 @@ public class PlayerCombat : MonoBehaviour
     {
         gun.TopggleShooting(isShoot);
     }
+
+    public void ChangeGun(GunData gunData)
+    {
+        gun.gunData = gunData;
+    }
 }

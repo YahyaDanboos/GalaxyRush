@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class PowerUpPickup : MonoBehaviour
 {
+    public enum PowerUpTypes
+    {
+        ExtraLife,
+        Shield,
+        DoubleShot
+    }
+
+    public PowerUpTypes powerUp;
+
     [Header("Component References")]
     public Rigidbody2D powerUpRigidbody;
 
@@ -11,16 +20,13 @@ public class PowerUpPickup : MonoBehaviour
     public AudioClip pickUpSFX;
     public PlaySoundAndDestroy oneShotSFXPlayer;
 
+    [Header("Prefab References - Shield")]
+    public PowerUpShield powerUpShield;
+
+    [Header("Prefab References - Double Shot")]
+    public GunData doubleShotGunData;
+
     float speed = 2;
-
-    public enum PowerUpTypes
-    {
-        ExtraLife,
-        Shield,
-        MultipleShot
-    }
-
-    public PowerUpTypes powerUp;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -37,9 +43,13 @@ public class PowerUpPickup : MonoBehaviour
                 case PowerUpTypes.ExtraLife:
                     collision.gameObject.GetComponent<Health>().AddLife();
                     break;
-                case PowerUpTypes.MultipleShot:
+                case PowerUpTypes.DoubleShot:
+                    collision.gameObject.GetComponent<PlayerCombat>().ChangeGun(doubleShotGunData);
                     break;
                 case PowerUpTypes.Shield:
+                    Instantiate(powerUpShield, collision.transform.position, collision.transform.rotation, collision.transform);
+                    break;
+                default:
                     break;
             }
 
