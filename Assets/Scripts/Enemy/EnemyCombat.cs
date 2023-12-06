@@ -7,6 +7,7 @@ public class EnemyCombat : MonoBehaviour
     [Header("Component References")]
     public Bullet bulletPrefab;
     public Transform bulletSpawnPoint;
+    public AudioSource sfxPlayer;
 
     Transform player;
 
@@ -72,6 +73,9 @@ public class EnemyCombat : MonoBehaviour
 
             Bullet bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, rotation);
             bullet.SetBulletTarget(false, attackPower);
+
+            // Play sound effect
+            sfxPlayer.Play();
         }
     }
 
