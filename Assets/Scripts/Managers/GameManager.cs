@@ -11,13 +11,15 @@ public class GameManager : MonoBehaviour
 
     [Header("Player Stats")]
     int playerLives = 3;
-    int gameScore;
 
     // Player's health component reference
     Health playerHealthReference;
 
     // Game Over Event
     public static event Action gameOver;
+
+    // Game Win Event
+    public static event Action gameWin;
 
     // Player Lives change Events
     public static event Action removePlayerLife;
@@ -48,7 +50,7 @@ public class GameManager : MonoBehaviour
     // Called by the player when it's defeated
     void PlayerDefeated()
     {
-        // Unsubscribe to the player instance's defeat event
+        // Unsubscribe from the player instance's Defeated and AddPlayerLife event
         playerHealthReference.characterDefeated -= PlayerDefeated;
         playerHealthReference.addLife -= AddPlayerLife;
 
@@ -88,5 +90,18 @@ public class GameManager : MonoBehaviour
     void GameOver()
     {
         gameOver?.Invoke();
+    }
+
+    // Called when the game is won
+    public void GameWin()
+    {
+        gameWin?.Invoke();
+    }
+
+    void OnDestroy()
+    {
+        // Unsubscribe from the player instance's Defeated and AddPlayerLife event
+        playerHealthReference.characterDefeated -= PlayerDefeated;
+        playerHealthReference.addLife -= AddPlayerLife;
     }
 }

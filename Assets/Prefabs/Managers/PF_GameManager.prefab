@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3557952095399062030}
   - component: {fileID: 5172446252976581522}
+  - component: {fileID: 1265033362074360610}
   m_Layer: 0
   m_Name: PF_GameManager
   m_TagString: Untagged
@@ -45,5 +46,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 3577897263665330779, guid: 4a92c4895b7ba06459d1b43864397307, type: 3}
-  playerLives: 3
-  playerScore: 0
+--- !u!114 &1265033362074360610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8843235411780103225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd45731e98d2c64d9d9da5bc4b9050a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 5172446252976581522}

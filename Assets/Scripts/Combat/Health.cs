@@ -10,31 +10,49 @@ public class Health : MonoBehaviour
 
     [Header("Health Settings")]
     public int maxHealth = 100;
-    private int currentHealth;
+    int currentHealth;
+
+    bool isInvulnerable = false;
 
     public event Action characterDefeated;
     public event Action addLife;
 
     void Start()
     {
-        // Initialize health
         currentHealth = maxHealth;
+
+        if (gameObject.tag == "Player")
+            StartCoroutine(InvulnerabilityPeriod());
+    }
+
+    IEnumerator InvulnerabilityPeriod()
+    {
+        isInvulnerable = true;
+        yield return new WaitForSeconds(3f); 
+        isInvulnerable = false;
     }
 
     // Damage the character
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        if (isInvulnerable == false)
+        {
+            currentHealth -= damage;
 
-        if (currentHealth <= 0)
-            Defeated();
+            if (currentHealth <= 0)
+                Defeated();
+        }
     }
 
     void Defeated()
     {
-        characterDefeated?.Invoke();
         Instantiate(destroyedVFX, transform.position, transform.rotation);
         Destroy(gameObject);
+    }
+
+    void OnDestroy()
+    {
+        characterDefeated?.Invoke();
     }
 
     public void AddLife()

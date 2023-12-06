@@ -32,6 +32,13 @@ public class Bullet : MonoBehaviour
         // Calculate the direction based on the bullet's rotation
         Vector2 direction = transform.up;
         bulletRigidbody.velocity = direction.normalized * speed;
+
+        // destroy the bullet if it is outside of the screen
+        Vector2 viewportPosition = Camera.main.WorldToViewportPoint(transform.position);
+        if (viewportPosition.y < 0f || viewportPosition.y > 1f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SetBulletTarget(bool isPlayer, int newAttackPower)
